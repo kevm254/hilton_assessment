@@ -1,0 +1,12 @@
+.picturestyles {
+    background-color: gray;
+    max-width: 100%;
+    min-height: 150px;
+    height: auto;
+    margin: auto;
+    border: 4px solid white;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -10px;
+}

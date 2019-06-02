@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.2.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0"
+  }
+}

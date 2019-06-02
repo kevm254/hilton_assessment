@@ -1,0 +1,7 @@
+.mainviewstyles {
+    background-image: url('http://localhost:4200/images/background.png');
+    width: 365px;
+    padding: 40px;
+    box-sizing: border-box;
+    background-position: center;
+}

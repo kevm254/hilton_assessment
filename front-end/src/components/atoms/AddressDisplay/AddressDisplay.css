@@ -1,0 +1,17 @@
+.address-display-styles {
+    width: 100%;
+    margin: auto;
+}
+
+.address-display-styles p {
+    margin: 5px;
+}
+
+.address-display-styles h2 {
+    margin: 5px;
+}
+
+.phone-num-styles {
+    text-decoration: underline;
+    font-weight: 700;
+}
