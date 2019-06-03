@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Dropdown-Content.css';
 
 export default class DropdownContent extends Component {
     constructor(props) {
@@ -7,7 +8,7 @@ export default class DropdownContent extends Component {
 
     render() {
         return (
-            <div>Dropdown Content</div>
+            <div className={['dropdown-content-styles']}>Dropdown Content</div>
         )
     }
 }

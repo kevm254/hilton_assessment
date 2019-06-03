@@ -85,8 +85,6 @@ export default class MainView extends Component {
 
                 {this.getSpacer('10px', '0', '0', '0')}
 
-
-
             </main>
         )
     }
