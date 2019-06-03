@@ -11,18 +11,44 @@ export default class App extends Component {
 
         this.state = {
             availableRooms: [
-                { id: 1, title: 'Room 1', disabled: false, isFirst: true },
-                { id: 2, title: 'Room 2', disabled: false, isFirst: false },
-                { id: 3, title: 'Room 3', disabled: false, isFirst: false },
-                { id: 4, title: 'Room 4', disabled: false, isFirst: false },
+                { id: 1, title: 'Room 1', checked: false, isFirst: true },
+                { id: 2, title: 'Room 2', checked: false, isFirst: false },
+                { id: 3, title: 'Room 3', checked: false, isFirst: false },
+                { id: 4, title: 'Room 4', checked: false, isFirst: false },
             ]
         };
+
+        this.bindAll();
     }
 
-    componentDidMount() {
+    bindAll() {
+        this.onCheckBoxClick = this.onCheckBoxClick.bind(this);
+    }
+
+    componentDidMount() {}
+
+    onCheckBoxClick(id) {
+        return () => {
+            const roomsList = [...this.state.availableRooms];
+
+            let currentRoomIdx = roomsList.findIndex((room) => {
+                return room.id === id;
+            });
+
+            let currentRoom = roomsList[currentRoomIdx];
+
+            for(let i = currentRoomIdx; i >= 0; i--) {
+                roomsList[i].checked = !roomsList[i].checked;
+            }
+
+            // currentRoom.checked = !currentRoom.checked;
+
+
+
+            this.setState({ availableRooms: roomsList });
+
         }
-
-
+    }
 
     render() {
         return (
@@ -32,12 +58,14 @@ export default class App extends Component {
                 <RoomDisplayContainer>
                     { this.state.availableRooms.map((room) => {
                         return <RoomDisplay
+                            id={room.id}
                             title={room.title}
-                            disabled={room.disabled}
+                            checked={room.checked}
                             isFirst={room.isFirst}
+                            checkBoxClicked={this.onCheckBoxClick(room.id)}
+
                         />
                     })}
-
                 </RoomDisplayContainer>
             </div>
         );
