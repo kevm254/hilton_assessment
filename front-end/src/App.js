@@ -35,15 +35,9 @@ export default class App extends Component {
                 return room.id === id;
             });
 
-            let currentRoom = roomsList[currentRoomIdx];
-
             for(let i = currentRoomIdx; i >= 0; i--) {
                 roomsList[i].checked = !roomsList[i].checked;
             }
-
-            // currentRoom.checked = !currentRoom.checked;
-
-
 
             this.setState({ availableRooms: roomsList });
 
