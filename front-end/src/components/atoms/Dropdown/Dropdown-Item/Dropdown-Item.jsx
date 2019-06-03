@@ -36,7 +36,6 @@ export default class DropdownItem extends Component {
     }
 
     toggleDropdownContentVisibility() {
-        alert('clicked!');
         this.setState({ dropdownIsOpen : !this.state.dropdownIsOpen });
     }
 
